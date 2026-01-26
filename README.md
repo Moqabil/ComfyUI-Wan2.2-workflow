@@ -14,6 +14,11 @@ Generate high-quality text-to-video and image-to-video content using Wan 2.2 14B
 - **Smart Memory Management** - Aggressive CPU offloading for low-VRAM systems
 - **Fast Generation** - 4-step sampling for rapid results
 
+<details>
+   <summary>🖼️ Screenshot</summary>
+   <img width="1753" height="1020" alt="image" src="https://github.com/user-attachments/assets/7c00817f-c3c9-4d11-8130-7c59f360ef44" />
+</details>
+
 ## 📋 System Requirements
 
 ### Minimum
@@ -26,29 +31,38 @@ Generate high-quality text-to-video and image-to-video content using Wan 2.2 14B
 - **System RAM:** 32GB
 - **Storage:** SSD for faster model loading
 
-## 🔧 Required Custom Nodes
+<details>
+   <summary>
+      <h3>🔧 Required Custom Nodes</h3>
+   </summary>
 
-Install these ComfyUI custom nodes (via ComfyUI Manager or manual installation):
+   Install these ComfyUI custom nodes (via ComfyUI Manager or manual installation):
+   
+   1. **[rgthree-comfy](https://github.com/rgthree/rgthree-comfy)** - Context system, workflow organization, group muting
+   2. **[cg-use-everywhere](https://github.com/chrisgoringe/cg-use-everywhere)** - Global parameter distribution
+   3. **[ComfyUI-Easy-Use](https://github.com/yolain/ComfyUI-Easy-Use)** - LoRA loading and model management
+   4. **[ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite)** - Video processing and frame selection
+   5. **[ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)** - Utility nodes
+   6. **[ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF)** - GGUF model loading (CRITICAL for this workflow)
+   7. **[comfyui_memory_cleanup](https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup)** - Memory management for low-VRAM
+   8. **[ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)** - Math expression nodes
+   9. **[efficiency-nodes-comfyui](https://github.com/jags111/efficiency-nodes-comfyui)** - Workflow efficiency nodes
 
-1. **[rgthree-comfy](https://github.com/rgthree/rgthree-comfy)** - Context system, workflow organization, group muting
-2. **[cg-use-everywhere](https://github.com/chrisgoringe/cg-use-everywhere)** - Global parameter distribution
-3. **[ComfyUI-Easy-Use](https://github.com/yolain/ComfyUI-Easy-Use)** - LoRA loading and model management
-4. **[ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite)** - Video processing and frame selection
-5. **[ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)** - Utility nodes
-6. **[ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF)** - GGUF model loading (CRITICAL for this workflow)
-7. **[comfyui_memory_cleanup](https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup)** - Memory management for low-VRAM
-8. **[ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)** - Math expression nodes
-9. **[efficiency-nodes-comfyui](https://github.com/jags111/efficiency-nodes-comfyui)** - Workflow efficiency nodes
+</details>
 
-### Quick Installation via ComfyUI Manager
+<details>
+   <summary><h3>Quick Installation via ComfyUI Manager</h3></summary>
 
-1. Open ComfyUI Manager
-2. Click "Install Custom Nodes"
-3. Search for each node pack above
-4. Click "Install" on each
-5. Restart ComfyUI
+   1. Open ComfyUI Manager
+   2. Click "Install Custom Nodes"
+   3. Search for each node pack above
+   4. Click "Install" on each
+   5. Restart ComfyUI
 
-### Manual Installation
+</details>
+
+<details>
+   <summary><h3>Manual Installation</h3></summary>
 
 ```bash
 cd ComfyUI/custom_nodes
@@ -66,7 +80,10 @@ git clone https://github.com/jags111/efficiency-nodes-comfyui
 # Restart ComfyUI
 ```
 
-## 📥 Required Model Files
+</details>
+
+<details>
+   <summary><h3>📥 Required Model Files</h3></summary>
 
 This workflow uses the **wan2.2-t2v-rapid-aio-v10-nsfw GGUF** model from [Phr00t/befox rapid merge](https://huggingface.co/befox/WAN2.2-14B-Rapid-AllInOne-GGUF).
 
@@ -119,6 +136,8 @@ The "D" prefix you may see in some screenshots (e.g., `Dwan2.2-t2v-rapid-aio-v10
 - **Download:** [wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
 - **Placement:** `ComfyUI/models/vae`
 
+</details>
+
 ---
 
 ### Quick Tips
@@ -136,130 +155,141 @@ The "D" prefix you may see in some screenshots (e.g., `Dwan2.2-t2v-rapid-aio-v10
 
 ---
 
-## 🎬 How to Use
+<details>
+   <summary><h3>🎬 How to Use</h3></summary>
 
-### Basic Workflow
-
-1. **Load the workflow** in ComfyUI
-2. **Set your parameters:**
-   - Width: 512 (default)
-   - Height: 512 (default)
-   - Seconds: 10 (duration of video)
-   - FPS: 15 (frames per second)
-   - *Frames are calculated automatically!*
-3. **Choose mode:**
-   - Text-to-Video (t2v): Generate from text prompt
-   - Image-to-Video (i2v): Animate from input image
-4. **Enter your prompt** (positive and negative)
-5. **Queue prompt** and generate!
-
-### Text-to-Video (t2v) Mode
-
-1. Make sure "Load Image" node is **disabled/muted**
-2. Enter your text prompt describing the video
-3. Queue prompt
-
-### Image-to-Video (i2v) Mode
-
-1. **Enable** the "Load Image" node
-2. Load your input image
-3. Enter your prompt (can enhance/modify the image animation)
-4. Queue prompt
-
-### Last Frame Extraction (Optional)
-
-The workflow includes automatic last frame saving for video chaining:
-
-- **Enabled by default** - Last frame is automatically saved
-- **To disable:** Mute the "Save the Last Frame" group using rgthree Group Muter
-- **Use case:** Chain multiple generations together for longer videos
-
----
-
-## ⚙️ Workflow Features Explained
-
-### Automatic Frame Calculation
-- Input: FPS × Seconds
-- Calculation: `(FPS × Seconds) + 1`
-- The +1 frame is required for Wan's t2v initialization
-- Works for both t2v and i2v modes automatically
-
-### Memory Optimization
-- GGUF quantization reduces model size
-- Aggressive CPU offloading (~9GB offloaded to system RAM)
-- Dynamic memory management between pipeline stages
-- Memory cleanup nodes for low-VRAM systems
-
-### Mode Switching
-- Clean interface with POS/NEG/Switch nodes
-- One control point switches both two paths (Text2Image and Image2Video) simultaneously
-- No manual rewiring needed between modes
+   ### Basic Workflow
+   
+   1. **Load the workflow** in ComfyUI
+   2. **Set your parameters:**
+      - Width: 512 (default)
+      - Height: 512 (default)
+      - Seconds: 10 (duration of video)
+      - FPS: 15 (frames per second)
+      - *Frames are calculated automatically!*
+   3. **Choose mode:**
+      - Text-to-Video (t2v): Generate from text prompt
+      - Image-to-Video (i2v): Animate from input image
+   4. **Enter your prompt** (positive and negative)
+   5. **Queue prompt** and generate!
+   
+   ### Text-to-Video (t2v) Mode
+   
+   1. Make sure "Load Image" node is **disabled/muted**
+   2. Enter your text prompt describing the video
+   3. Queue prompt
+   
+   ### Image-to-Video (i2v) Mode
+   
+   1. **Enable** the "Load Image" node
+   2. Load your input image
+   3. Enter your prompt (can enhance/modify the image animation)
+   4. Queue prompt
+   
+   ### Last Frame Extraction (Optional)
+   
+   The workflow includes automatic last frame saving for video chaining:
+   
+   - **Enabled by default** - Last frame is automatically saved
+   - **To disable:** Mute the "Save the Last Frame" group using rgthree Group Muter
+   - **Use case:** Chain multiple generations together for longer videos
+</details>
 
 ---
 
-## 🐛 Troubleshooting
 
-### "Out of Memory" Errors
-- Drop to Q3_K model instead of Q4_K
-- Close other applications to free system RAM
-- Enable Windows page file (set to system managed)
-- Reduce video length (fewer seconds)
+<details>
+   <summary><h3>⚙️ Workflow Features Explained</h3></summary>
 
-### "Missing Nodes" Error
-- Install all required custom nodes (see list above)
-- Use ComfyUI Manager's "Install Missing Nodes" feature
-- Restart ComfyUI after installing nodes
-
-### GGUF Models Not Loading
-- Ensure ComfyUI-GGUF is installed correctly
-- Verify model files are in correct folders with exact filenames
-- Check that files downloaded completely (verify file sizes)
-
-### Poor Quality Output
-- Try Q4_K or Q5_K model if you have more VRAM
-- Increase steps (though 4 steps works well with this model)
-- Adjust prompt strength and detail
-- Use better quality input images for i2v mode
-
-### Slow Generation
-- This is normal for low-VRAM setups (CPU offloading takes time)
-- Expected: ~5 minutes for 1 second video on RTX 3050 6GB
-- Close background applications
-- Ensure models are on SSD for faster loading
+   ### Automatic Frame Calculation
+   - Input: FPS × Seconds
+   - Calculation: `(FPS × Seconds) + 1`
+   - The +1 frame is required for Wan's t2v initialization
+   - Works for both t2v and i2v modes automatically
+   
+   ### Memory Optimization
+   - GGUF quantization reduces model size
+   - Aggressive CPU offloading (~9GB offloaded to system RAM)
+   - Dynamic memory management between pipeline stages
+   - Memory cleanup nodes for low-VRAM systems
+   
+   ### Mode Switching
+   - Clean interface with POS/NEG/Switch nodes
+   - One control point switches both two paths (Text2Image and Image2Video) simultaneously
+   - No manual rewiring needed between modes
+</details>
 
 ---
 
-## 🎯 Performance Benchmarks
-
-### RTX 3050 6GB (Tested Configuration)
-- **Model:** Q4_K + Q3_K_M CLIP
-- **Video length:** 1 second (16 frames @ 15 FPS)
-- **Total time:** ~4.6 minutes
-  - Model loading: ~1 min
-  - Sampling (4 steps): ~1.8 min
-  - VAE decode: ~30s
-- **Quality:** Good, suitable for most use cases
-
-### Expected Performance on Other Cards
-- **RTX 3060 12GB:** ~3 minutes (less offloading overhead)
-- **RTX 4060 8GB:** ~2.5 minutes (faster architecture)
-- **RTX 4070 12GB:** ~2 minutes (minimal offloading)
-
-*Times are approximate and depend on system configuration*
+<details>
+   <summary><h3>🐛 Troubleshooting</h3></summary>
+   
+   ### "Out of Memory" Errors
+   - Drop to Q3_K model instead of Q4_K
+   - Close other applications to free system RAM
+   - Enable Windows page file (set to system managed)
+   - Reduce video length (fewer seconds)
+   
+   ### "Missing Nodes" Error
+   - Install all required custom nodes (see list above)
+   - Use ComfyUI Manager's "Install Missing Nodes" feature
+   - Restart ComfyUI after installing nodes
+   
+   ### GGUF Models Not Loading
+   - Ensure ComfyUI-GGUF is installed correctly
+   - Verify model files are in correct folders with exact filenames
+   - Check that files downloaded completely (verify file sizes)
+   
+   ### Poor Quality Output
+   - Try Q4_K or Q5_K model if you have more VRAM
+   - Increase steps (though 4 steps works well with this model)
+   - Adjust prompt strength and detail
+   - Use better quality input images for i2v mode
+   
+   ### Slow Generation
+   - This is normal for low-VRAM setups (CPU offloading takes time)
+   - Expected: ~5 minutes for 1 second video on RTX 3050 6GB
+   - Close background applications
+   - Ensure models are on SSD for faster loading
+</details>
 
 ---
 
-## 📝 Optional: NSFW Content Unlocker
+<details>
+   <summary><h3>🎯 Performance Benchmarks</h3></summary>
 
-The workflow includes an optional NSFW unlocker LoRA that is **disabled by default**.
+   ### RTX 3050 6GB (Tested Configuration)
+   - **Model:** Q4_K + Q3_K_M CLIP
+   - **Video length:** 1 second (16 frames @ 15 FPS)
+   - **Total time:** ~4.6 minutes
+     - Model loading: ~1 min
+     - Sampling (4 steps): ~1.8 min
+     - VAE decode: ~30s
+   - **Quality:** Good, suitable for most use cases
+   
+   ### Expected Performance on Other Cards
+   - **RTX 3060 12GB:** ~3 minutes (less offloading overhead)
+   - **RTX 4060 8GB:** ~2.5 minutes (faster architecture)
+   - **RTX 4070 12GB:** ~2 minutes (minimal offloading)
+   
+   *Times are approximate and depend on system configuration*
+</details>
 
-### DR34ML4Y_I2V_14B_LOW_V2.safetensors (Optional LoRA)
-- **Purpose:** Removes content filters for adult content generation
-- **NOT required for normal usage**
-- **Strength:** 0.6 (model) / 0.6 (clip) when enabled
-- **To disable:** Mute the "Load LORA" node or set strength to 0
+---
 
-⚠️ The workflow works perfectly for normal SFW content generation without this LoRA.
+<details>
+   <summary><h3>📝 Optional: NSFW Content Unlocker</h3></summary>
+
+   The workflow includes an optional NSFW unlocker LoRA that is **disabled by default**.
+   
+   ### DR34ML4Y_I2V_14B_LOW_V2.safetensors (Optional LoRA)
+   - **Purpose:** Removes content filters for adult content generation
+   - **NOT required for normal usage**
+   - **Strength:** 0.6 (model) / 0.6 (clip) when enabled
+   - **To disable:** Mute the "Load LORA" node or set strength to 0
+   
+   ⚠️ The workflow works perfectly for normal SFW content generation without this LoRA.
+</details>
 
 ---
 
