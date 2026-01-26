@@ -277,19 +277,9 @@ The "D" prefix you may see in some screenshots (e.g., `Dwan2.2-t2v-rapid-aio-v10
 
 ---
 
-<details>
-   <summary><h3>📝 Optional: NSFW Content Unlocker</h3></summary>
-
-   The workflow includes an optional NSFW unlocker LoRA that is **disabled by default**.
-   
-   ### DR34ML4Y_I2V_14B_LOW_V2.safetensors (Optional LoRA)
-   - **Purpose:** Removes content filters for adult content generation
-   - **NOT required for normal usage**
-   - **Strength:** 0.6 (model) / 0.6 (clip) when enabled
-   - **To disable:** Mute the "Load LORA" node or set strength to 0
-   
-   ⚠️ The workflow works perfectly for normal SFW content generation without this LoRA.
-</details>
+### Optional LoRAs
+The workflow supports standard LoRA loading through the EasyUse nodes. 
+You can add any compatible Wan 2.2 LoRAs to enhance or modify output.
 
 ---
 
